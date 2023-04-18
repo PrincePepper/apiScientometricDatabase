@@ -1,5 +1,3 @@
-# Sereda Semen
-# 2022, 06.10
 import enum
 import time
 from uuid import uuid4
@@ -19,7 +17,8 @@ class scientometric_status(enum.Enum):
 class Users(Base):
     id = Column(UUID(as_uuid=True), nullable=False, primary_key=True, default=uuid4,
                 server_default=func.gen_random_uuid())
-    full_name = Column(String(64), unique=True, nullable=False)
+    guid = Column(UUID(as_uuid=True), nullable=False)
+    full_name = Column(String(), nullable=False)
     scientometric_database = Column(Enum(scientometric_status))
     document_count = Column(Integer(), default=0, server_default='0')
     citation_count = Column(Integer(), default=0, server_default='0')

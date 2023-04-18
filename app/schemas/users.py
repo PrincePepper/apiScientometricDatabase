@@ -12,6 +12,7 @@ class scientometricEnum(str, Enum):
 
 # Shared properties
 class UserBase(BaseModel):
+    guid: UUID = None
     full_name: str = None
     scientometric_database: scientometricEnum
     document_count: int = None
@@ -21,13 +22,16 @@ class UserBase(BaseModel):
 
 
 class UserCreate(UserBase):
+    guid: UUID
+    full_name: str
+    scientometric_database: scientometricEnum
     document_count: int = 0
     citation_count: int = 0
     h_index: int = 0
 
 
 class UserUpdate(UserBase):
-    user_id: str
+    guid: UUID
     full_name: str = None
     scientometric_database: scientometricEnum = None
     document_count: int = None
