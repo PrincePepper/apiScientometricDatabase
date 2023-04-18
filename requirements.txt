@@ -1,0 +1,8 @@
+SQLAlchemy
+fastapi
+pydantic[email,dotenv]
+alembic
+uvicorn
+asgi-correlation-id
+psycopg2
+fastapi_jwt_auth
