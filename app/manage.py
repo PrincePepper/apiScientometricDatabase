@@ -1,6 +1,7 @@
 import argparse
 
 import uvicorn
+from dotenv import load_dotenv
 
 from app.core.config import settings
 
@@ -9,6 +10,8 @@ parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument('--runserver', action='store_true')
 parser.add_argument('--reload', action='store_true')
 args = parser.parse_args()
+
+load_dotenv()
 
 
 def main():

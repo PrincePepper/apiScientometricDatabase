@@ -1,4 +1,3 @@
-import secrets
 from functools import lru_cache
 from typing import Any, Dict, Optional, List, Union
 
@@ -14,7 +13,6 @@ class Settings(BaseSettings):
 
     API_V1_STR: str = "/api"
 
-    SALT_SECRET_KEY: str = secrets.token_urlsafe(32)
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
@@ -46,7 +44,8 @@ class Settings(BaseSettings):
 
     class Config:
         case_sensitive = True
-        env_file = './.env'
+        # env_file = './.env' # для запуска в консоли
+        env_file = '../.env'  # для запуска через ide
 
 
 settings = Settings()

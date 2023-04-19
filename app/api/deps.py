@@ -22,6 +22,7 @@ schemas = TypeVar("schemas", bound=BaseModel)
 
 
 class BaseGenericResponse(GenericModel, Generic[schemas]):
-    status: int = 0
+    status: int = 200
     message: str = "ok"
     data: schemas
+

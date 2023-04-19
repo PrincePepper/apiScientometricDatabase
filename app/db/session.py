@@ -18,7 +18,7 @@ def connect_sqlalc():
         db=settings.POSTGRES_DATABASE
     )
     settings.SQLALCHEMY_DATABASE_URI = database_url
-    engine = create_engine(config.settings.SQLALCHEMY_DATABASE_URI, echo=True)
+    engine = create_engine(config.settings.SQLALCHEMY_DATABASE_URI)
 
     def timer(timeout):
         Timer = threading.Timer(timeout, helthcheck)

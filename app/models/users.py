@@ -9,9 +9,9 @@ from app.db.base_class import Base
 
 
 class scientometric_status(enum.Enum):
-    scopus = 1
-    wos = 2
-    risc = 3
+    scopus = "scopus"
+    wos = "wos"
+    risc = "risc"
 
 
 class Users(Base):
@@ -24,5 +24,5 @@ class Users(Base):
     citation_count = Column(Integer(), default=0, server_default='0')
     h_index = Column(Integer(), default=0, server_default='0')
     url = Column(String)
-    created_at = Column(Integer, default=int(time.time()),
+    created_at = Column(Integer(), default=int(time.time()),
                         server_default=func.extract('epoch', func.now()))
