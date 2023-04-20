@@ -23,6 +23,7 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
+    POSTGRES_SERVER_MIGRATIONS_HOST: str
     POSTGRES_SERVER_HOST: str
     POSTGRES_SERVER_PORT: str = "5432"
     POSTGRES_USERNAME: str = "postgres"
@@ -44,8 +45,8 @@ class Settings(BaseSettings):
 
     class Config:
         case_sensitive = True
-        # env_file = './.env' # для запуска в консоли
-        env_file = '../.env'  # для запуска через ide
+        env_file = './.env'  # для запуска в консоли
+        # env_file = '../.env'  # для запуска через ide
 
 
 settings = Settings()

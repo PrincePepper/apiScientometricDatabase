@@ -10,7 +10,7 @@ from app.core.config import settings
 
 def connect_sqlalc():
     database_url = 'postgresql://{user}:{password}@{host}:{port}/{db}'.format(
-        host=settings.POSTGRES_SERVER_HOST,
+        host=settings.POSTGRES_SERVER_MIGRATIONS_HOST,
         port=settings.POSTGRES_SERVER_PORT,
         user=settings.POSTGRES_USERNAME,
         password=settings.POSTGRES_PASSWORD,

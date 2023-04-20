@@ -21,7 +21,7 @@ services:
       service: "postgresql"
   fastapi:
     container_name: fastapi_container
-    image: fastapi
+    image: backend-task
     command: [ "uvicorn", "app.main:app","--host", "0.0.0.0","--reload" ]
     ports:
       - "8000:8000"

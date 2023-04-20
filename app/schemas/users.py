@@ -1,5 +1,5 @@
 import enum
-from typing import Optional
+from typing import Optional, Any
 from uuid import UUID
 
 from pydantic import BaseModel, AnyUrl, constr, validator
@@ -116,7 +116,7 @@ class ProfileGet(BaseModel):
 
 
 class StatGet(BaseModel):
-    scientometric_database: scientometric_status
+    scientometric_database: Any
     documents_sum: int
     citations_sum: int
     average_h_index: float
